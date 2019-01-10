@@ -12,7 +12,7 @@ def emote():
     return random.choice(emotes)
 
 @app.route('/table-flip', methods=['GET', 'POST'])
-def table-flip():
+def table_flip():
     return '(╯°□°）╯︵ ┻━┻'
 
 if __name__ == '__main__':
