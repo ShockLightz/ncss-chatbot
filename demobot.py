@@ -5,21 +5,21 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # When people visit the home page '/' use the hello_world function
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     return 'Hello, World!'
 
 # When people visit the ncss page /ncss use the hello_world function
-@app.route('/ncss')
+@app.route('/ncss', methods=['GET', 'POST'])
 def ncss():
     return '<h1>NCSS</h1>'
 
-@app.route('/greet')
+@app.route('/greet', methods=['GET', 'POST'])
 def greet():
-    name = request.values.get('text')
+    name = request.values.get('text', methods=['GET', 'POST'])
     return f'hi {name}'
 
-@app.route('/weather')
+@app.route('/weather', methods=['GET', 'POST'])
 def weather():
     temp = int(request.values.get('temp'))
     cond = 'nice'
