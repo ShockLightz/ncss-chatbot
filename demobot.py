@@ -7,9 +7,13 @@ app = Flask(__name__)
 
 @app.route('/emote', methods=['GET', 'POST'])
 def emote():
-    emotes = ['(✿◠‿◠)', '≧◡≦', '(▰˘◡˘▰)', '(●´ω｀●)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', '（ミ￣ー￣ミ）',
-              '(づ｡◕‿‿◕｡)づ', '✌.ʕʘ‿ʘʔ.✌', '◎[▪‿▪]◎']
+    emotes = ['(✿◠‿◠)', '≧◡≦', '(▰˘◡˘▰)', '(●´ω｀●)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', 
+              '（ミ￣ー￣ミ）', '(づ｡◕‿‿◕｡)づ', '✌.ʕʘ‿ʘʔ.✌', '◎[▪‿▪]◎']
     return random.choice(emotes)
+
+@app.route('/table-flip', methods=['GET', 'POST'])
+def table-flip():
+    return '(╯°□°）╯︵ ┻━┻'
 
 if __name__ == '__main__':
     # Start the web server!
